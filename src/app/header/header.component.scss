@@ -5,6 +5,13 @@
 }
 
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: white;
     padding: 8px 0;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
@@ -44,7 +51,7 @@
 
 .nav-link.active {
     color: #ffffff !important;
-    background-color: #2980b9;
+    background-color: rgb(0, 126, 19);
     border-radius: 4px;
     padding: 8px 16px;
 }
@@ -65,15 +72,26 @@
     border-radius: 4px;
     transition: all 0.3s ease;
     height: 32px;
+    border: 2px solid #3498db;
 }
 
 .search-input:focus {
     outline: none;
-    border-color: #2980b9;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    border-color: #2980b9
+
 }
 
 .fas {
     margin-right: 4px;
     font-size: 14px;
+}
+
+:host {
+    display: block;
+    padding-top: 60px;
+}
+.search-button {
+     border-radius: 25%;
+     background-color: transparent;
+     border: none;
 }

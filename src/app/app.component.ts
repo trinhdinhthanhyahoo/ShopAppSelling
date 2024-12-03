@@ -4,7 +4,9 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   // selector: 'app-root',
-  selector: 'app-order',
+  // selector: 'app-order',
+  // selector: 'app-order-comfirm',
+  selector: 'app-login',
   standalone: true,
   imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',

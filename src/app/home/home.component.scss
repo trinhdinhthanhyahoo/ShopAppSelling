@@ -17,6 +17,7 @@
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     margin: 15px auto;
 }
 
@@ -31,6 +32,10 @@
         visibility: visible;
         position: static;
         margin-top: 10px;
+    }
+
+    .product-item {
+        min-height: 400px;
     }
 }
 
@@ -65,8 +70,8 @@
 .product-action {
     display: flex;
     gap: 10px;
-    margin-top: 10px;
     justify-content: center;
+    margin-top: auto;
 }
 
 .product-action .btn {
@@ -110,5 +115,5 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transform: translateY(-5px);
     border-color: red;
-    border-style: 3px;
+    border : 3px solid red;
 }

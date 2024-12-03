@@ -1,0 +1,109 @@
+.intro-container {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.product-header, h4, h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0.5px;
+    text-shadow: -1px -1px 0 #000,
+                 1px -1px 0 #000,
+                -1px  1px 0 #000,
+                 1px  1px 0 #000;
+    margin-bottom: 20px;
+}
+.product-header, p {
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    
+}
+
+table {
+    width: 94%;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    border-collapse: collapse;
+
+    box-shadow: 0 4px 15px rgba(71, 118, 230, 0.2);
+
+    thead {
+        th {
+            background: linear-gradient(45deg, #4776E6, #8E54E9);
+            color: white;
+            padding: 8px;
+            font-weight: 400;
+            white-space: nowrap;
+      
+            text-shadow: -0.5px -0.5px 0 #1e3c8d,
+                         0.5px -0.5px 0 #1e3c8d,
+                        -0.5px 0.5px 0 #1e3c8d,
+                         0.5px 0.5px 0 #1e3c8d;
+        }
+    }
+
+    tbody {
+        tr {
+            &:hover {
+                background-color: rgba(71, 118, 230, 0.05);
+            }
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(71, 118, 230, 0.1);
+            vertical-align: middle;
+            text-align: center;
+        }
+    }
+}
+.product-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+}
+.product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.text-start {
+    text-align: center !important;
+}
+.btn-gradient {
+    width: 200px;
+   text-align: center;
+    background-size: 200% auto;
+    background-image: linear-gradient(
+        to right,
+        #4776E6 0%,
+        #8E54E9 51%,
+        #4776E6 100%
+    );
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    transition: all 0.5s ease;
+    box-shadow: 0 2px 10px rgba(71, 118, 230, 0.2);
+    border-radius: 25px;
+    height: 41px;
+
+    white-space: nowrap;
+    margin: auto;
+    &:hover {
+        background-position: right center;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(142, 84, 233, 0.4);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 5px rgba(71, 118, 230, 0.2);
+    }
+}
