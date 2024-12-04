@@ -108,8 +108,11 @@
     }
 
     .search-input {
-        width: 150px;
-        font-size: 14px;
+        width: 120px;
+        font-size: 13px;
+        padding: 4px 8px;
+        border-radius: 20px;
+        border: 2px solid #3498db;
     }
 
     .navbar > .container,
@@ -141,7 +144,7 @@
         order: 2;
         flex: 1;
         justify-content: flex-end;
-        max-width: 150px;
+        max-width: 120px;
     }
 
     .navbar-collapse {
@@ -194,6 +197,14 @@
                 background-color: #2c3e50;
                 color: #3498db;
             }
+        }
+    }
+
+    .search-button {
+        padding: 4px;
+        
+        .fas {
+            font-size: 13px;
         }
     }
 }
