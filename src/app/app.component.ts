@@ -3,12 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  // selector: 'app-root',
+  selector: 'app-root',
   // selector: 'app-order',
   // selector: 'app-order-comfirm',
   // selector: 'app-login',
   // selector: 'app-register',
-  selector: 'app-detail-product',
+  // selector: 'app-detail-product',
   standalone: true,
   imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
