@@ -6,11 +6,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { DetailProductComponent } from './detail-product/detail-product.component';
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
+    // { path: '', component: HomeComponent },
     // { path: 'home', component: HomeComponent }
     // { path: '', component: OrderComponent }
     // { path: '', component: OrderComfirmComponent },
     // { path: '', component: LoginComponent },
-    // { path: '', component: RegisterComponent },
+    { path: '', component: RegisterComponent },
     // { path: '', component: DetailProductComponent }
 ];

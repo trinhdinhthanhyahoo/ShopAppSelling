@@ -1,40 +1,73 @@
 <app-header></app-header>
 <div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <form autocomplete="off">
+    <form #registerForm="ngForm" autocomplete="off">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+
                 <div class="register-form mx-auto">
                     <h2 class="register-header">Đăng ký</h2>
                     <div class="form-group">
-                        <label for="email">Email/Phone</label>
-                        <input type="text" class="form-control" id="account" placeholder="">
+                        <label for="phone">Số điện thoại</label>
+                        <input type="text" class="form-control" id="phone" placeholder="Nhập số điện thoại"
+                            [(ngModel)]="phone" (ngModelChange)="onPhoneChange()" name="phone" required
+                            (focus)="registerForm.form.markAsTouched()">
                         <div class="divider-nospace"></div>
+                        <p class="text-danger" *ngIf="phone.length > 0 && phone.length < 10 && registerForm.touched">
+                            Số điện thoại phải có 10 số
+                        </p>
                     </div>
                     <div class="form-group">
                         <label>Họ tên</label>
-                        <input type="text" class="form-control" id="account" placeholder="">
+                        <input type="text" class="form-control" id="full-name" placeholder="Nhập họ tên"
+                            [(ngModel)]="fullName" name="fullName" required>
                         <div class="divider-nospace"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ngày sinh</label>
+                        <input type="date" class="form-control" id="date-of-birth" placeholder="Nhập ngày sinh"
+                            [(ngModel)]="dateOfBirth" (ngModelChange)="checkAge()" name="dateOfBirth"
+                            (focus)="registerForm.form.markAsTouched()">
+                        <div class="divider-nospace"></div>
+                        <p class="text-danger"
+                            *ngIf="registerForm.controls['dateOfBirth'] && registerForm.controls['dateOfBirth'].hasError('age') && registerForm.form.touched">
+                            Bạn chưa đủ 18 tuổi
+                        </p>
                     </div>
                     <div class="form-group">
                         <label>Địa chỉ</label>
-                        <input type="text" class="form-control" id="account" placeholder="">
+                        <input type="text" class="form-control" id="address" placeholder="Nhập địa chỉ"
+                            [(ngModel)]="address" name="address">
                         <div class="divider-nospace"></div>
                     </div>
                     <div class="form-group">
                         <label for="password">Mật khẩu</label>
-                        <input type="password" class="form-control" id="password" placeholder="ít nhất 6 ký tự">
+                        <input type="password" class="form-control" id="password" placeholder="ít nhất 6 ký tự"
+                            [(ngModel)]="password" name="password" required (focus)="registerForm.form.markAsTouched()">
                         <div class="divider-nospace"></div>
+                        <p class="text-danger" *ngIf="password.length > 0 && password.length < 6">
+                            Mật khẩu phải có ít nhất 6 ký tự
+                        </p>
                     </div>
                     <div class="form-group">
-                        <label for="password">Nhập lại mật khẩu</label>
-                        <input type="password" class="form-control" id="password" placeholder="ít nhất 6 ký tự">
+                        <label for="retype-password">Nhập lại mật khẩu</label>
+                        <input type="password" class="form-control" id="retype-password" placeholder="ít nhất 6 ký tự"
+                            [(ngModel)]="retypePassword" name="retypePassword" (ngModelChange)="passwordMatch()"
+                            required>
                         <div class="divider-nospace"></div>
+                        <p class="text-danger" *ngIf="retypePassword.length > 0 && retypePassword.length < 6">
+                            Mật khẩu phải có ít nhất 6 ký tự
+                        </p>
+                        <p class="text-danger"
+                            *ngIf="registerForm.controls['retypePassword'] && registerForm.controls['retypePassword'].hasError('passwordMismatch') && registerForm.form.touched">
+                            Mật khẩu không khớp</p>
                     </div>
 
                     <div class="form-group">
                         <div class="form-check checkbox-text">
                             <span style="display: flex">
-                                <input type="checkbox" class="form-check-input" id="remember">
+                                <input type="checkbox" class="form-check-input" id="remember" [(ngModel)]="isAccepted"
+                                    name="isAccepted" required>
                                 <label for="remember" class="form-check-label checkbox-start">
                                     Tôi đồng ý với các điều
                                     khoản và điều kiện
@@ -42,14 +75,14 @@
                             </span>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <button class="btn btn-primary" type="submit">Đăng ký</button>
+                    <div class="form-group" (click)="onRegister()">
+                        <button class="btn btn-primary" type="submit" [disabled]="!isAccepted">Đăng ký</button>
                     </div>
                     <div class="divider-nospace"></div>
                     <p class="text-center">Bạn đã có tài khoản?<span> <a href="">Đăng nhập</a></span></p>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
+    </form>
 </div>
 <app-footer></app-footer>

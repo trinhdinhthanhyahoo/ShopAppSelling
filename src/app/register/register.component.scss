@@ -24,9 +24,10 @@
         background: linear-gradient(45deg, #000000, #0a2036, #000000, #0066cc);
         -webkit-background-clip: text;
         background-clip: text;
-        color: transparent;
+        color: #ddd;
         font-size: 14px;
     }
+
 }
 
 .form-control {
@@ -38,6 +39,7 @@
     font-size: 16px;
     outline: none;
     transition: all 0.3s ease;
+    color: #ddd;
 
     &:focus {
         box-shadow: none;
@@ -66,7 +68,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+  color: #ddd;
+
     .checkbox-start {
         margin-left: 8px;
         color: #333;
@@ -99,4 +102,7 @@
         background-color: #0066cc;
         border-color: #0066cc;
     }
+}
+.form-check-label{
+    color: yellow !important;
 }
